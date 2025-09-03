@@ -27,5 +27,5 @@ module ActsAsFollower
 
   setup
 
-  require 'acts_as_follower/railtie' if defined?(Rails) && Rails::VERSION::MAJOR >= 3
+  require 'acts_as_follower/railtie' if defined?(Rails)
 end
