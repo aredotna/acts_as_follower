@@ -2,8 +2,6 @@
 
 module ActsAsFollower
   module FollowerLib
-    private
-
     DEFAULT_PARENTS = [ApplicationRecord, ActiveRecord::Base].freeze
 
     # Retrieves the parent class name if using STI.

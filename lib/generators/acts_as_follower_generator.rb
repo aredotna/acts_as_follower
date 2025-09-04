@@ -16,7 +16,8 @@ class ActsAsFollowerGenerator < Rails::Generators::Base
     if ActiveRecord::Base.timestamped_migrations
       Time.now.utc.strftime('%Y%m%d%H%M%S')
     else
-      format('%.3d', (current_migration_number(dirname) + 1))
+      number = current_migration_number(dirname) + 1
+      format('%.3d', number)
     end
   end
 
