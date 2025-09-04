@@ -21,12 +21,12 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 3.1.0'
 
-  s.add_dependency 'activerecord', '>= 5.0', '< 8.0'
+  s.add_dependency 'activerecord', '>= 7.0', '< 8.0'
 
   s.add_development_dependency "sqlite3", "~> 1.6"
-  s.add_development_dependency "shoulda_create"
-  s.add_development_dependency "shoulda"
-  s.add_development_dependency "factory_bot"
-  s.add_development_dependency "rails", ">= 5.0", '< 8.0'
-  s.add_development_dependency "rubocop", ">= 1.20"
+  s.add_development_dependency "shoulda_create", "~> 0.0.9"
+  s.add_development_dependency "shoulda", "~> 4.0"
+  s.add_development_dependency "factory_bot", "~> 6.5"
+  s.add_development_dependency "rails", ">= 7.0", '< 8.0'
+  s.add_development_dependency "rubocop", "~> 1.80"
 end
