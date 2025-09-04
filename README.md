@@ -13,7 +13,10 @@ Main uses would be for Users to follow other Users or for Users to follow Books,
 
 ## Installation
 
-### The master branch supports Rails 5
+### Requirements
+
+- Ruby 3.1.0 or higher
+- Rails 5.0+ (tested up to Rails 7.2)
 
 Add the gem to the gemfile:
 ```ruby
