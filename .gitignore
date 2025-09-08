@@ -6,3 +6,4 @@ memory
 .rvmrc
 Gemfile.lock
 log
+test/dummy30/tmp/local_secret.txt

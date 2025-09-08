@@ -14,46 +14,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'
+          ruby-version: '3.1'
       - run: gem install rubocop --no-doc
       - name: Run rubocop
         run: rubocop --format progress --format json --out rubocop.json
 
-  test-ruby-3-rails-6:
+  test-ruby-rails-7:
     runs-on: ubuntu-latest
     needs: ['rubocop']
     strategy:
       matrix:
-        ruby-version: ['3.0', '3.1', 'head']
-        rails-version: ['~> 6.1.4']
+        ruby-version: ['3.1', '3.2', '3.3']
+        rails-version: ['7.0', '7.1', '7.2']
 
     steps:
     - name: Check out branch
-      uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true
-      env:
-        RAILS_VERSION: ${{ matrix.rails-version }}
-    - name: Run tests
-      run: bundle exec rake test
-
-  test-rub-27:
-    runs-on: ubuntu-latest
-    needs: ['rubocop']
-    strategy:
-      matrix:
-        ruby-version: ['2.7']
-        rails-version: ['~> 5.2.4', '~> 6.1.4']
-
-    steps:
-    - name: Check out branch
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
